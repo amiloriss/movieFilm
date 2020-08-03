@@ -1,0 +1,57 @@
+@import './font';
+@import './color';
+@import './fix';
+@import './mixin';
+@import './animation';
+@import './header';
+@import './main-section';
+@import './new-movies-section';
+@import './trailer-section';
+@import './actors-section';
+@import './contacts-section';
+@import './footer';
+@import './media';
+
+* {
+  font-family: 'PTSans';
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1200px;
+  background-color: $bgc-blue;
+  padding-top: 70px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+.red-letter {
+  color: $red;
+}
+
+section {
+  .title-icon {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+  }
+}
+
+.actors-section {
+  background-color: $white;
+}

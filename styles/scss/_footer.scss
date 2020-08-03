@@ -1,0 +1,22 @@
+.footer {
+  background-color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  color: $bgc-blue;
+
+  .top-line {
+    margin-bottom: 10px;
+    a {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

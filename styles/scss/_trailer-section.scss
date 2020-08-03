@@ -1,0 +1,75 @@
+.trailer-section {
+  @include section-padding;
+  .title {
+    @include title;
+    color: $white;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  #btn-1:checked ~ .wrapper-btn .lb-btn-1 {
+    background-color: $white;
+    color: $bgc-blue;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .trailer-2 {
+      display: none;
+    }
+  }
+
+  #btn-1:checked ~ .trailer-1 {
+    display: block;
+  }
+
+  #btn-2:checked ~ .wrapper-btn .lb-btn-2 {
+    background-color: $white;
+    color: $bgc-blue;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #btn-2:checked ~ .trailer-2 {
+    display: block;
+  }
+
+  .wrapper-btn {
+    width: 605.5px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    .lb-btn-1,
+    .lb-btn-2 {
+      color: $white;
+      text-transform: uppercase;
+      border: 2px solid $white;
+      padding: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      width: 300px;
+      text-align: center;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .trailer-1,
+  .trailer-2 {
+    border: 10px solid $white;
+    width: 100%;
+    display: none;
+    box-shadow: 0 0 5px 0.5px rgba($black, 0.4);
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+}

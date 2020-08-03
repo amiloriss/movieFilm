@@ -1,0 +1,19 @@
+@mixin section_padding {
+  padding: 30px 50px 30px 50px;
+}
+
+@mixin title {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 600;
+  border-bottom: 2px solid $red;
+}
+
+@mixin name-of-movie {
+  color: $red;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 600;
+}

@@ -1,0 +1,22 @@
+.contacts-section {
+  padding: 50px;
+
+  .title {
+    @include title;
+    color: $white;
+    margin-bottom: 50px;
+  }
+
+  .form-group {
+    label {
+      color: $white;
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+    .write-us {
+      resize: none;
+      height: 250px;
+    }
+  }
+}

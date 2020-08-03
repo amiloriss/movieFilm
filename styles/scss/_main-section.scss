@@ -1,0 +1,25 @@
+.main-section {
+  @include section_padding;
+  margin-top: 20px;
+  width: 100%;
+  height: 700px;
+  background-image: url('./../../content/main_section/main_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -100;
+  position: relative;
+
+  .title {
+    position: absolute;
+    right: 140px;
+    top: 200px;
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-image: linear-gradient(to top, $red, $white 60%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    display: block;
+  }
+}

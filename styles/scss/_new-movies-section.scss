@@ -1,0 +1,251 @@
+.remark {
+  text-align: center;
+}
+
+.suggest-movies-section {
+  background-color: $white;
+  @include section_padding;
+
+  .title {
+    @include title;
+    color: $black;
+  }
+
+  .suggest-movies {
+    .suggest-movies-wrapper {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-evenly;
+      .movie {
+        width: 200px;
+        position: relative;
+
+        &:hover .movie-image {
+          filter: brightness(0.5);
+        }
+
+        &:hover .open-window-label .custom-btn {
+          &::before {
+            transform: translate(-50%, -50%) scale(1);
+          }
+          &::after {
+            transform: translate(-50%, -50%) scale(1) rotate(90deg);
+          }
+        }
+
+        #open-window-btn-1,
+        #open-window-btn-2,
+        #open-window-btn-3,
+        #open-window-btn-4,
+        #open-window-btn-5 {
+          display: none;
+
+          &:checked ~ .hidden-info-bg {
+            display: block;
+          }
+        }
+
+        .open-window-label {
+          position: absolute;
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          margin-bottom: 0;
+
+          .custom-btn {
+            width: 100%;
+            height: 100%;
+            &::before,
+            &::after {
+              content: '';
+              display: block;
+              background-color: $white;
+              width: 40px;
+              height: 2px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transition: all 0.1s;
+            }
+
+            &::before {
+              transform: translate(-50%, -50%) scale(0);
+            }
+            &::after {
+              transform: translate(-50%, -50%) scale(0) rotate(90deg);
+            }
+          }
+        }
+
+        .hidden-info-bg {
+          top: 0;
+          left: 0;
+          display: none;
+          content: '';
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          z-index: 2;
+          background-color: $black-opacity;
+
+          .hidden-info {
+            position: fixed;
+            width: 800px;
+            height: 500px;
+            padding: 20px;
+            background-color: $white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            #close-window-btn-1,
+            #close-window-btn-2,
+            #close-window-btn-3,
+            #close-window-btn-4,
+            #close-window-btn-5 {
+              display: none;
+            }
+
+            .close-window-label {
+              position: absolute;
+              top: 0;
+              right: 0;
+              .custom-btn {
+                content: '';
+                display: block;
+                background-color: $black;
+                width: 30px;
+                height: 30px;
+                position: relative;
+                cursor: pointer;
+
+                &::before,
+                &::after {
+                  content: '';
+                  display: block;
+                  background-color: $white;
+                  height: 2px;
+                  width: 30px;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                }
+
+                &::before {
+                  transform: translate(-50%, -50%) rotate(45deg);
+                }
+
+                &::after {
+                  transform: translate(-50%, -50%) rotate(-45deg);
+                }
+              }
+            }
+
+            .movie-image-hidden-zone {
+              width: 344.5px;
+              float: left;
+              margin-right: 20px;
+            }
+
+            .info-movie {
+              height: 460px;
+              .name-of-movie {
+                @include name-of-movie;
+              }
+              .descr-of-movie {
+                height: 420px;
+                overflow: auto;
+                font-size: 18px;
+                color: $silver-light;
+                padding-right: 5px;
+
+                &::-webkit-scrollbar-thumb {
+                  background-color: rgb(194, 194, 194);
+                  border-radius: 1px;
+                }
+
+                &::-webkit-scrollbar {
+                  -webkit-appearance: none;
+                }
+
+                &::-webkit-scrollbar:horizontal {
+                  height: 5px;
+                }
+
+                .additional-info {
+                  margin-top: 30px;
+                  .row-details {
+                    &:not(:first-child) {
+                      margin-top: 10px;
+                    }
+                    .detail-title {
+                      display: inline-block;
+                      color: $black;
+                      img {
+                        width: 22px;
+                        display: inline-block;
+                        margin-right: 10px;
+                      }
+
+                      .title-of-detail {
+                        display: inline-block;
+                        width: 120px;
+
+                        &::after {
+                          content: ':';
+                        }
+                      }
+                    }
+                    .detail-content {
+                      display: inline;
+                      color: $black;
+                    }
+                    .time {
+                      &::after {
+                        content: ' мин.';
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .movie-image {
+          width: 200px;
+          border: 10px solid $black;
+          border-radius: 2px;
+          transition: all 0.3s;
+        }
+        .list-info {
+          margin-top: 20px;
+          text-align: justify;
+        }
+      }
+    }
+    .quotes-of-movies {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      .quote {
+        margin: 20px;
+        font-size: 19px;
+        color: $silver;
+        position: relative;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 60px;
+          height: 2px;
+          background-color: $red;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

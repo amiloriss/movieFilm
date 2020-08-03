@@ -1,0 +1,184 @@
+.actors-section {
+  @include section_padding;
+  .title {
+    @include title;
+    color: $black;
+    margin-bottom: 50px;
+  }
+  .actor {
+    display: none;
+  }
+
+  .lb-actor:hover {
+    opacity: 0.6;
+  }
+
+  #actor-1:checked ~ .wrapper-btn .lb-actor-1 {
+    color: $white;
+    background-color: $black;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #actor-1:checked ~ .info-actor .info-actor-1 {
+    display: block;
+  }
+
+  #actor-2:checked ~ .wrapper-btn .lb-actor-2 {
+    color: $white;
+    background-color: $black;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #actor-2:checked ~ .info-actor .info-actor-2 {
+    display: block;
+  }
+
+  #actor-3:checked ~ .wrapper-btn .lb-actor-3 {
+    color: $white;
+    background-color: $black;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #actor-3:checked ~ .info-actor .info-actor-3 {
+    display: block;
+  }
+
+  #actor-4:checked ~ .wrapper-btn .lb-actor-4 {
+    color: $white;
+    background-color: $black;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #actor-4:checked ~ .info-actor .info-actor-4 {
+    display: block;
+  }
+
+  #actor-5:checked ~ .wrapper-btn .lb-actor-5 {
+    color: $white;
+    background-color: $black;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #actor-5:checked ~ .info-actor .info-actor-5 {
+    display: block;
+  }
+
+  .wrapper-btn {
+    display: flex;
+    justify-content: space-between;
+    .lb-actor {
+      font-size: 19px;
+      text-transform: uppercase;
+      border: 2px solid $black;
+      cursor: pointer;
+      width: 210px;
+      text-align: center;
+      padding: 5px 0;
+      transition: opacity 0.2s;
+      margin-right: 1px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  .info-actor {
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+
+    .info-actor-all {
+      display: none;
+    }
+
+    .container {
+      padding: 15px;
+      .row {
+        .left-side {
+          .avatar {
+            margin: 0 auto;
+            display: block;
+            width: 298px;
+          }
+          .some-info-actor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $white;
+            padding: 14.15px 0;
+            color: $black;
+
+            .category {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .star-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+              }
+              span {
+                text-transform: uppercase;
+                font-size: 27px;
+              }
+            }
+            .value {
+              border-bottom: 2px dashed $red;
+
+              &:not(:last-child) {
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+        .right-side {
+          .carousel {
+            max-height: 372.5px;
+            min-height: 0px;
+            overflow: hidden;
+          }
+          .some-story-actor {
+            background-color: $white;
+            font-size: 18px;
+            padding: 0 20px 0 20px;
+            color: $silver;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px 0.5px rgba($black, 0.3);
+            height: 352px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-bottom: 20px solid $white;
+            position: relative;
+            line-height: 28px;
+
+            &::-webkit-scrollbar-thumb {
+              background-color: rgb(194, 194, 194);
+              border-radius: 1px;
+              position: absolute;
+              top: 0;
+            }
+
+            &::-webkit-scrollbar {
+              -webkit-appearance: none;
+            }
+
+            &::-webkit-scrollbar:horizontal {
+              height: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
